@@ -1,0 +1,56 @@
+Here let us understand about those import and export statements that we use .
+
+require Function:
+
+In Node.js versions prior to 12, the require function is used to import functionality from other modules.
+You specify the path to the module you want to import, either a core module, a file, or a module installed via npm.
+Example: const fs = require('fs');
+
+
+CommonJS Module System:
+
+Node.js uses the CommonJS module system by default.
+
+CommonJS modules use module.exports to export values and require to import them.
+
+Example: // math.js
+const add = (a, b) => a + b;
+module.exports = { add };   // this is how you export your variables , functions , const, classes etc
+// app.js
+const { add } = require('./math');  // this is to import 
+console.log(add(2, 3)); // Output: 5
+
+
+Native ES6 Module Support:
+
+Starting from Node.js version 12, native support for ES6 modules was introduced.
+Use the export keyword to specify what part of a module should be accessible from outside the module.
+You can export variables, functions, classes, or any other JavaScript value.
+There are two types of exports:
+Named exports: export { variableName, functionName };
+Default export: export default variableName;
+import Statement:
+
+Use the import statement to bring functionality from other modules into the current module.
+You can import named exports using braces {} and default exports without braces.
+Specify the path to the module you're importing from.
+
+ECMAScript 6 module syntax vs common JS module system
+
+Cleaner Syntax: ES6 module syntax offers a cleaner and more intuitive way to import and export functionality between modules.
+Standardization: ES6 modules provide a standardized way to organize and share code across different environments, including browsers and Node.js.
+Tree-Shaking: ES6 modules support tree-shaking, which means that bundlers can eliminate unused exports from the final bundle, resulting in smaller bundle sizes.
+No Global Scope Pollution: Unlike require, which adds imported variables to the global scope, ES6 modules keep imports local to the module, reducing the risk of naming conflicts and unintended side effects.
+
+
+
+
+NOTE : In Node.js, files containing ES6 module syntax must have the .mjs file extension to distinguish them from CommonJS modules (.js extension).
+This convention helps Node.js determine how to interpret the contents of the file: as either an ES6 module or a CommonJS module.
+
+// app.js (CommonJS module)
+const fs = require('fs');
+
+
+// app.mjs (ES6 module)
+import fs from 'fs';

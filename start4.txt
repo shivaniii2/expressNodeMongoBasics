@@ -1,0 +1,31 @@
+
+REPL stands for Read-Eval-Print Loop. It's an interactive programming environment that takes single user inputs (expressions, statements, etc.), evaluates them, prints the result, and then loops back to wait for the next input. REPL is commonly used in interpreted languages like Python, Ruby, JavaScript, and many others for quick experimentation and debugging.
+
+
+You can access the Node.js REPL by simply typing node in your terminal or command prompt and hitting Enter. This will open up the Node.js REPL environment where you can start typing JavaScript code.
+
+
+The REPL is an excellent tool for experimenting with Node.js code snippets, trying out new features, or testing how certain functions behave. It's a safe sandbox environment where you can quickly iterate and see the results.
+
+ The Node.js REPL also includes special commands prefixed with a dot (.) that you can use to perform various tasks, such as .help to display a list of available commands, .break to exit from a multi-line input, .clear to clear the current context, and .exit to exit the REPL.
+ 
+ 
+ 
+ 
+
+In Node.js, the require function is used to include external modules/core modules or files into your current JavaScript file
+
+
+The fs module in Node.js provides an API for interacting with the file system. It allows you to perform various operations such as reading from and writing to files, creating directories, deleting files, and more
+
+
+
+
+Asynchronous file system operations in Node.js allow you to perform file I/O operations without blocking the execution of your code. This means that while a file operation is in progress (such as reading or writing a file), your program can continue to perform other tasks or respond to events, rather than waiting for the file operation to complete.
+
+Node.js provides asynchronous versions of file system functions that are not suffixed with Sync, such as fs.readFile() and fs.writeFile(), as well as their synchronous counterparts like fs.readFileSync() and fs.writeFileSync().
+
+
+if you will try to do async file operations without any callback as an argument like you used to do in sync case , then you will get this error :
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined

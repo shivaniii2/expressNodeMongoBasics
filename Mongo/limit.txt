@@ -1,0 +1,11 @@
+In MongoDB, the limit() method is used to specify the maximum number of documents that should be returned in the result set of a query. It's often used to paginate query results or to limit the amount of data returned by a query.
+
+db.collection.find(query).limit(limit)
+
+db.collection: This refers to the MongoDB collection you want to query.
+query: This parameter specifies the criteria to filter documents. It is optional and can be omitted if you want to return all documents in the collection.
+limit: This parameter specifies the maximum number of documents to return in the result set. It's an integer value representing the maximum number of documents to be returned.
+Usage:The limit() method is typically used in conjunction with the find() method to control the size of the result set. It ensures that only a certain number of documents are returned, even if more documents match the query criteria.
+
+
+db.books.find({_id : ObjectId("6639e71ad22c3822105025cf")}).limit(1)

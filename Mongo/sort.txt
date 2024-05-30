@@ -1,0 +1,37 @@
+In MongoDB, the sort() method is used to specify the order in which the documents should be returned in the result set of a query. 
+It allows you to sort documents based on one or more fields in ascending or descending order.
+
+
+db.collection.find(query).sort(sortSpecifier)
+
+
+sortSpecifier: This parameter specifies the sorting order. It can be a single field or an object with multiple fields and their corresponding sort order.
+
+Sorting Order:The sorting order can be specified as either ascending (1) or descending (-1). By default, the sort order is ascending if not specified.
+
+
+for example :
+db.books.find({}).sort({title : 1})
+
+Above is executed a query to find all documents in the books collection and sorted them by the title field in ascending order (1).
+
+The documents are sorted based on the title field in ascending order.
+In MongoDB, string values are sorted in ascending order based on their Unicode code point values.Lower Unicode code point values come before higher ones.
+
+Twilight"
+Starts with the letter "T".
+Unicode code point for "T" is 84.
+"hello world"
+Starts with the letter "h".
+Unicode code point for "h" is 104.
+"hero"
+Starts with the letter "h".
+Unicode code point for "h" is 104.
+
+
+I am adding genres new field  with value [fantasy,magic] to all the documents of collection book.
+Let us see how can i do that :
+db.books.updateMany({},{$set : {genres :["fantasy","magic"]}})
+
+I used the above command and tadow. 
+updateMany({}, { $set: { newField: "value" } }): This command updates all documents in the collection by setting the value of the new field (newField) to the specified value (value). The {} filter targets all documents in the collection.

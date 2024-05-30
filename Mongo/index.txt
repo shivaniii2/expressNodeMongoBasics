@@ -1,0 +1,16 @@
+Indexes in MongoDB are special data structures that store a small portion of the collection’s data set in an easy-to-traverse form.
+These structures support the efficient execution of queries and significantly improve read operations' performance.
+
+
+LET US UNDERSTAND HOW ?
+Consider a collection users with documents containing name and age fields. Without an index, a query to find users aged 25 would require scanning every document in the collection.
+
+db.users.find({ age: 25 })
+
+
+By creating an index on the age field.
+
+db.users.createIndex({ age: 1 })
+
+this is gonna create an ascending index on age field .
+MongoDB can quickly locate documents with age: 25 using the index, bypassing the need to scan the entire collection.

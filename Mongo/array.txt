@@ -1,0 +1,46 @@
+Let us learn how to query on fields that have arrays as values .
+
+
+For a start I have a query that says :
+
+db.books.find({genres:"fantasy"})
+
+its like just look for this one element in the genres array if it is there then return that document . No matter how much more elements that array have .
+
+so the above command is not like we explicitly checking for documents that have this fantasy string as value as we do for other fields that are not having array values.
+Mongo will look for this genres field and its value and as its value is an array so it will return all the documents that have this fantasy string in the array value of genres field and not just the documents that have only "fantasy" as a value of genres. So its a magic for array value case:)
+
+
+
+db.books.find({genres:["fantasy"]})
+
+The above commad will only fetch documents whose genres field has only  "fantasy " element in the array.(we are specifying here that genres has an array value and inside that array just one element).
+
+also you can have more of exact match queries like :
+
+db.books.find({genres : ["drama","romance"]})
+
+
+
+
+so far two ways of querying on an array field : one is like i want this item in the array or I want it to be an exact match.
+
+
+
+what if i want "fiction" and "mystery" both of them to be there in the documents returning to me.For that we use $all .
+
+db.books.find({ genres: { $all: ["fiction", "mystery"] } })
+
+This query will return all documents where the genres array contains both "fiction" and "mystery".
+
+$all selects the documents where the value of a field is an array that contains all the specified elements, regardless of their order within the array .
+If the array field doesn't exist in a document, or the field is not an array, the document will not be selected.
+
+
+
+let us see how to query nested documents . 
+
+db.nestedOnes.find({"reviews.name" :"shivani"})
+
+
+when using dot notation , place the field name in quotation.

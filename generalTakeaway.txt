@@ -1,0 +1,12 @@
+Nginx (pronounced "engine-x") is a high-performance web server, reverse proxy server, and load balancer. 
+It is known for its stability, rich feature set, simple configuration, and low resource consumption. 
+Web Server: Serving static content such as HTML, CSS, and JavaScript files.
+Reverse Proxy: Forwarding client requests to backend servers and serving as an intermediary between clients and servers.
+Load Balancer: Distributing client requests across multiple servers to ensure no single server becomes a bottleneck.
+API Gateway: Managing, monitoring, and routing API calls.
+
+
+
+Brew Services is a macOS utility that allows you to manage background services using Homebrew, a popular package manager for macOS. Brew Services provides a convenient way to start, stop, and restart services that have been installed via Homebrew.
+
+In my macOS nginx is installed through Homebrew so "brew services restart nginx" is the command to restart  nginx.

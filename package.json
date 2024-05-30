@@ -1,0 +1,32 @@
+{
+  "name": "node-project",
+  "version": "1.0.0",
+  "description": "learning node from scratch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon mongoDbDriver/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivaniii2/node.git"
+  },
+  "author": "shivani sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivaniii2/node/issues"
+  },
+  "homepage": "https://github.com/shivaniii2/node#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^6.6.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

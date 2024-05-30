@@ -1,0 +1,17 @@
+In MongoDB, the $in operator is used within queries to specify that a field's value should match any value in a given array. This operator is very useful for filtering documents where the field value is among a specified list of values.
+
+
+example : db.books.find({rating :{$in :["5","6"]}})
+
+means return me all the documents that have reating field in range of 5 or 6 . 
+remember the OR operator is also going to get us the same thing :
+
+db.books.find({$or : [{rating :"5"} , {rating :"6"}]})
+
+but ofcourse $in operator syntax is way simpler where we are just checking if the value of the field we are querying on is under the range of values given in the array.
+
+
+
+There is also $nin operator which means not in that means opposite of $in :)
+
+db.books.find({rating : {$nin : ["5", "6"]}})

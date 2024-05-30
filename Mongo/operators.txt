@@ -1,0 +1,102 @@
+MongoDB provides a rich set of operators that are used in queries to perform various operations on data. 
+
+Let us learn about each and one of them :
+
+Comparison Operators:
+$eq: Matches values that are equal to a specified value.
+$gt: Matches values that are greater than a specified value.
+$lt: Matches values that are less than a specified value.
+$gte: Matches values that are greater than or equal to a specified value.
+$lte: Matches values that are less than or equal to a specified value.
+
+
+
+Logical Operators:
+$and: Joins query clauses with a logical AND.
+$or: Joins query clauses with a logical OR.
+
+
+
+
+like for example :
+
+db.nestedOnes.find({rating:{$gt : "7"}})
+
+The above command returned me all the documents from nestedOnes collection of bookstore database that have rating greater than 7
+
+
+db.books.find({pages: {$lt:'600'}})
+
+db.books.find({pages :{$gt:'500'}},{title:1})
+This will return only titles of all the documents that have pages greater than 500.
+
+
+db.books.find({pages :{$gt:'500'},rating:"6"})
+The above command is going to return me all the documents that have pages greater than 500 and rating  6.
+Note : Do not confuse the query parameter with projection one as projection will be second argument to find method while a complete query can have two criterias.for example :   
+
+
+db.books.find({pages :{$gt:'500'}},{title:1})   - this here has a query and a projection.
+db.books.find({pages :{$gt:'500'},rating:"6"})   - this is a query with two criterias.
+
+db.books.find({pages : {$lte : '600'} , rating:{ $gt:'4'}},{ title: 1})   - i hope you are getting the expression here 🙄
+
+
+
+
+
+In MongoDB, the $or operator is used to perform a logical OR operation on an array of two or more expressions, and selects the documents that satisfy at least one of the specified conditions.
+
+Here's the basic syntax of the $or operator:
+
+db.collection.find({
+  $or: [
+    { <expression1> },
+    { <expression2> },
+    ...
+  ]
+})
+db.collection: This refers to the MongoDB collection you want to query.
+$or: This is the operator that specifies a logical OR operation.
+[...]: This is an array containing two or more expressions, where each expression represents a separate condition.
+
+
+Let us do some practical.
+
+db.books.find({$or : [{rating:"6"},{pages :"400"}]})
+
+
+db.nestedOnes.find({$or : [{rating :{$gte:"5"} }, {pages :{$lt :"400"}}]})
+
+
+
+
+In MongoDB, the $in operator is used to specify a condition where the value of a field must match any of the values specified in an array. 
+It allows you to perform a query that matches documents where a field value matches any value from a provided list.
+
+
+db.collection.find({
+  field: { $in: [value1, value2, ...] }
+})
+for example : db.books.find({rating:{$in :["4","6"]}})
+this command is basically asking to return all the documents of collection books that have their rating field in range 4 or 6 :)
+
+
+
+$or can also be used for the desired o/p 
+while using $or we write operator first and not the field name .
+$in is way easier to write and get as compared to $or.
+
+
+In MongoDB, the $nin (not in) operator is the negation of the $in operator. It is used to select documents where the value of a field is not in the specified array or does not match any of the values in the array.
+
+
+db.collection.find({
+  field: { $nin: [value1, value2, ...] }
+})
+
+
+
+db.books.find({rating : {$nin : ["4","6"]}})
+This will return me all the documents whose ratings are neither 4 nor 6
+

@@ -1,0 +1,77 @@
+In MongoDB, the update method is used to modify existing documents in a collection.
+
+MongoDB provides several update methods, including updateOne, updateMany.
+
+
+updateOne
+This method updates a single document that matches the filter criteria.
+javascrip
+db.collection.updateOne(
+    { filterCriteria },  // The filter criteria to find the document to update
+    { updateOperations },  // The update operations to apply
+);
+
+
+updateMany : 
+This method updates all documents that match the filter criteria.
+
+db.collection.updateMany(
+    { filterCriteria },
+    { updateOperations },
+);
+
+
+
+
+db.books.updateOne({_id:ObjectId("6639e26af05d43f46f218ce4")} , {$set : {pages : "800"}})
+
+The above command will update a document with id given such that the pages will become "800"
+
+
+
+db.books.updateMany({author :"shivani"} , {$set :{rating :"9" , author :"mickey"}})
+
+This will update all the documents that have author "shivani" .
+
+
+The $inc operator in MongoDB is used to increment (or decrement) the value of a specified field in a document.
+
+db.nestedOnes.updateOne({title :"the kapil show"} , {$inc : {rating :2}})
+
+this is going to increase the rating of document with title : "the kapil show"  by 2 
+db.nestedOnes.updateOne({title :"the kapil show"} , {$inc : {rating :-2}})
+
+this is gonna decrease.
+
+
+
+In MongoDB, the $push and $pull operators are used to manipulate array fields within documents. They are part of the update operators that allow you to modify the contents of an array by adding or removing elements.
+
+
+The $push operator adds an element to an array. If the field does not exist, it will be created as an array and the element will be added to it.
+{ $push: { field: value } }
+ 
+ 
+ The $push operator can be used with additional options such as $each, $slice, $sort, and $position.
+
+$each: Adds multiple items to an array.
+$sort: Sorts the array elements.
+$slice: Limits the size of the array.
+$position: Specifies the position in the array where the element(s) should be added.
+
+The $pull operator removes all instances of a value or values from an array that match a specified condition.
+
+{ $pull: { field: value } }
+let us see in action :
+
+db.books.updateOne({_id :ObjectId("6639e5e7d22c3822105025cd") } , {$pull : {genres : "fantasy"}})
+
+You know it would have deleted one element that is "fantasy" from the genres array of books document.
+
+db.books.updateOne({title : "hello world"} , {$push : {genres : "romantic"}})
+
+What if you want to add more than one element in the array ? The answer is to use $each method .
+let us see how :
+db.books.updateMany({title : "the wind"} , {$push : {genres : {$each : ["sci-fi" , "fictional "]}}})
+
+The above command has added both elements in the genres array. 

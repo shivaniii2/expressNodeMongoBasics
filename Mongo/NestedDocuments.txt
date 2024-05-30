@@ -1,0 +1,19 @@
+Nested documents in MongoDB refer to documents that contain other documents (sub-documents) within them.
+
+Let us create them .
+
+
+Note : To create a new collection in MongoDB, you can use either the createCollection() method or by inserting a document into a collection that does not exist yet. Here's how you can do it using both methods:
+db.createCollection("newCollection")
+     
+     Or
+
+db.newCollection.insertOne({})  // Inserting an empty document
+
+
+
+db.nestedOnes.insertOne({title:"heeramandi",rating:"9",reviews:[{name:"shivani",body :"bakwas hai yr"}, {name:"mickey", body:"sahi hai yr"},{name :"mishi",body:"I dont get it guys"}] })
+
+
+so as you can see the above command is going to insert a nested document in the nestedOnes collection.
+review field has its own documents

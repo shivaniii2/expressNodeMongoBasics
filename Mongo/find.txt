@@ -1,0 +1,30 @@
+In MongoDB, the find() method is used to query documents from a collection based on specified criteria. It is one of the most commonly used methods for retrieving data from a MongoDB database.
+
+db.collection.find(query, projection)
+db.collection: This refers to the MongoDB collection you want to query.
+query: This parameter specifies the criteria to filter documents. It is an optional parameter. If no query is provided, find() returns all documents in the collection.
+projection: This parameter specifies which fields to include or exclude from the returned documents. It is also an optional parameter.
+
+
+Let us do a practical now :
+db.books.find({author:"shivani"})
+ So this has returned me all the  documents from collection books that has author shivani.
+ 
+ 
+ db.books.find({rating:"5"} , {title:1 , author :1})
+
+The above command has given me the list of documents that has rating 5 and also only title and author fields in the returned document object.
+
+
+You can be even more specific with the query argument like :
+db.books.find({author:'chiku sharma',rating:'5'})
+
+here only those documents will be returned that satisfies both criteria that is author and rating
+
+
+
+
+
+The findOne() method in MongoDB is similar to the find() method, but it returns only one document that satisfies the specified criteria. It's commonly used when you expect only one document to match your query or when you're only interested in the first document that matches the criteria.
+
+db.collection.findOne(query, projection)

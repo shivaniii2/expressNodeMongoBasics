@@ -1,0 +1,20 @@
+Let us understand the concept of core modules in node 
+
+Node.js core modules are modules/js libraries that are built-in and come bundled with the Node.js runtime. These modules provide essential functionality for various tasks such as file system operations, networking, working with streams, cryptography, and more. Core modules are available globally within your Node.js applications without the need for additional installation or configuration.
+
+Here is a list of some of the core modules provided by Node.js:
+
+fs (File System): Provides functions for interacting with the file system, including reading and writing files, creating directories, and performing file operations.
+
+http: Allows you to create HTTP servers, handle HTTP requests, and interact with web clients.
+
+https: Similar to http, but provides support for HTTPS (HTTP over SSL/TLS).
+
+path: Offers utilities for working with file paths, such as resolving and normalizing file paths, joining path segments, and extracting file extensions
+stream: Provides interfaces for working with streams of data, including readable and writable streams for handling input and output operations.
+child_process: Provides functions for spawning child processes, executing shell commands, and communicating with child processes. etc
+
+
+
+
+

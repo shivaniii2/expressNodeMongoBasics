@@ -1,0 +1,31 @@
+.flex{display: flex;}
+.justify-between{justify-content: space-between;}
+.p-40{padding-right: 40px;font-size: 30px;}
+.bg-cadet{background: cadetblue;}
+.pl-15{padding-left: 15px;}
+.justify-center{justify-content: center;}
+.align-center{align-items: center;}
+.about{position: absolute;
+    top: 80%;
+    width: 50%;
+    margin-left: 50%;
+    transform: translate(-25%, -50%);
+}
+.grid{display: grid;margin-bottom: 10px;}
+.form-class{width: 55%;
+height: 50px;}
+.mb-8{margin-bottom: 8px;}
+.form-btn{text-align: center;
+    width: 55%;
+    margin-top: 30px;
+}
+.mission{font-size: 25px; font-family: fantasy;}
+.blog{font-size: 40px;
+    font-weight: 700;}
+.actual-about{align-items: center;
+    display: grid;
+    justify-content: center;}
+.btn-class{padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background: cadetblue;}

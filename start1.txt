@@ -1,0 +1,74 @@
+Firstly you should know the basics and they should be as clear as water in your head.:
+They say :
+Node.js is a powerful tool for building scalable, high-performance server-side applications using JavaScript
+
+what is a server ?
+A server is a computer or a software system (not browser for example my computer can be a server) that provides functionality or services to other computers, known as clients, over a network. In the context of web development, a server typically refers to a computer program that listens for incoming requests from clients, processes those requests, and returns appropriate responses.For example : You have seen this http core module of node js that allows your to create your own server and you can listen to the incoming requests .
+Servers can be programmed using a variety of programming languages, including JavaScript (with Node.js), Python, Ruby, Java, PHP.
+ When a client sends a request to the server, the server-side code processes the request, performs any necessary computations or interactions with external systems, and generates a response. This response is then sent back to the client, typically in the form of HTML, JSON, or other data formats that the client can understand and use.
+ 
+ When we refer to "server-side applications" or "server-side" in the context of web development, it means that the application logic and processing are executed on the server rather than in the user's web browser.
+ 
+ 
+ Here's a breakdown of the typical flow of a server-side application:
+
+Request from Client: A user sends a request to the server. This request could be for loading a web page, submitting a form, accessing a file, or any other interaction with the application.
+Processing on the Server: The server receives the request and processes it. This processing can involve tasks such as retrieving data from a database, performing calculations, handling authentication and authorization, and generating dynamic content.
+Response to Client: After processing the request, the server generates a response. This response typically includes HTML, CSS, JavaScript, or other data that the client's web browser can understand and render.
+Delivery to Client: The server sends the response back to the client's web browser, which then renders the content for the user to see and interact with.
+Server-side applications are responsible for handling business logic, data storage and retrieval, user authentication, and other backend tasks.
+
+Node.js is a popular choice for building server-side applications because it allows developers to write server-side code using JavaScript, which is also used for client-side scripting in web browsers
+
+
+Node.js uses V8 as its underlying JavaScript engine to execute JavaScript code on the server side, extending the capabilities of JavaScript beyond the web browser environment.
+
+The V8 engine is an open-source JavaScript engine developed by Google. It is written in C++ and is used to execute JavaScript code in web browsers, specifically in Google Chrome and Chromium-based browsers. V8 is known for its high performance and efficiency, making it a popular choice for running JavaScript code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Node.js is a powerful runtime environment that allows you to run JavaScript on the server side. Here's everything you need to know about it:
+
+Node js is not a framework and not even not a language.
+
+JavaScript Runtime: Node.js is built on the V8 JavaScript runtime, which is the same runtime that powers Google Chrome. This allows JavaScript to be executed outside of the browser, on servers, making it a versatile language for both client-side and server-side development.
+
+Asynchronous and Event-Driven: One of the key features of Node.js is its asynchronous, non-blocking I/O model. This means that I/O operations like reading from a file or making a network request don't block the execution of the program. Instead, Node.js uses callbacks, Promises, or async/await syntax to handle these operations asynchronously, leading to better performance and scalability.
+
+Single-Threaded: Node.js operates on a single-threaded event loop. While this might seem limiting, Node.js can handle a large number of concurrent connections due to its non-blocking I/O model. It offloads I/O operations to the system kernel, allowing it to efficiently handle many connections at once.
+
+Package Ecosystem: Node.js has a vast ecosystem of third-party packages available through npm (Node Package Manager). npm is the largest ecosystem of open source libraries in the world, with millions of packages available for a wide range of use cases. This makes it easy to find and use libraries for common tasks, as well as share your own code with the community.
+
+Server-Side Development: Node.js is commonly used for building web servers and web applications. It's well-suited for handling I/O-heavy tasks, such as serving HTTP requests, streaming data, or handling real-time communication with WebSockets.
+
+Framework and Libraries: While Node.js itself provides the runtime environment, there are many popular frameworks and libraries built on top of it to simplify web development. Some of the most popular ones include Express.js for building web servers, Socket.io for real-time communication, and Sequelize or Mongoose for interacting with databases.
+
+Cross-Platform: Node.js is cross-platform, meaning it can run on various operating systems, including Windows, macOS, and Linux. This makes it a flexible choice for developing applications that need to run on different platforms.
+
+
+
+
+NVM (Node Version Manager): NVM is a command-line utility used to manage multiple installations of Node.js on a single machine. It allows developers to install and switch between different versions of Node.js with ease. This is useful for projects that require specific versions of Node.js due to compatibility or feature requirements. NVM is especially handy for developers who work on multiple projects with different Node.js version dependencies.
+
+In summary, Node.js is the runtime environment for executing JavaScript code, npm is the package manager for installing and managing JavaScript packages, and NVM is a tool for managing multiple installations of Node.js on a single machine. Together, they form a powerful ecosystem for JavaScript development, enabling developers to build a wide range of applications and tools.
+
+
+
+
+

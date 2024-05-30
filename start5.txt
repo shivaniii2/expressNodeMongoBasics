@@ -1,0 +1,21 @@
+
+Node.js provides the os module, which allows you to retrieve information about your operating system. 
+
+In the context of an operating system, the hostname refers to the unique name that identifies a computer or device within a network. It's used to distinguish one computer from another in a networked environment. The hostname is typically assigned to a device during the operating system installation or configuration process.
+
+
+Retrieve the total amount of system memory (in bytes) - os.totalmem()
+Retrieve the amount of free system memory (in bytes) =os.freemem()
+To convert byte into MB just divide bytes/(1024 * 1024)
+For GB bytes/(1024 * 1024 * 1024)
+
+
+The "total memory" of an operating system refers to the total amount of physical random-access memory (RAM) installed in the computer or device running that operating system. RAM is a type of volatile memory that the operating system and applications use to store data temporarily while the computer is powered on.
+
+
+
+nodemon, a utility for Node.js that automatically restarts your Node application whenever changes are detected in your files. It's particularly useful during development to streamline the development workflow.
+
+
+
+In Node.js, the validator module is a package that provides various string validation utilities. It's commonly used for validating strings such as URLs, email addresses, and other common formats.

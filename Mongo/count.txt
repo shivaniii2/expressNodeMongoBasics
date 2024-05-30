@@ -1,0 +1,12 @@
+db.books.countDocuments()
+You can always count the number of documents in a collection.
+
+countDocuments method is used to count the number of documents that match a specified query criteria within a collection.
+db.books.countDocuments({author:"chiku sharma"})
+
+
+we can chain methods together one after the other like you can have find method and then count.
+db.books.find({author:"chiku sharma"}).count()
+
+
+so here we are counting what find is returning . But I guess countDocuments is way cooler than this as you can have a query directly.

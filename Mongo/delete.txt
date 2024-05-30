@@ -1,0 +1,5 @@
+Its way simpler to delete documents from a collection .
+
+db.books.deleteOne({_id :ObjectId("6639e13ef05d43f46f218ce1") })
+
+this will delete this one document with the defined _id from collection 

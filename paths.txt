@@ -1,0 +1,13 @@
+const pathToFile = './file.txt';
+In this example, pathToFile represents a path to a file named file.txt in the current directory where the script is located. If the script is executed from /Users/username/projects/myapp, then pathToFile would point to /Users/username/projects/myapp/file.txt.
+
+
+The ./ notation explicitly refers to the current directory.
+It can be used to specify a file or directory path relative to the current directory.
+For example, if your script is located at /Users/username/projects/myapp/script.js, then ./ refers to /Users/username/projects/myapp.
+
+
+const pathToFile = path.join(__dirname,'../view/index.html')
+
+You know that __dirname would give you the absolute path for the current directory .
+../   : This moves up one directory level from the current directory. So, if the current directory is /Users/username/projects/myapp/folder1, '../' would take you to /Users/username/projects/myapp.
