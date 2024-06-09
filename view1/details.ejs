@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    
+   <div>
+    <%= blog.title %>
+   </div>
+   <div>
+    <%= blog.body %>
+   </div>
+   
+    <button class = "del" data-doc ="<%= blog._id %>" >
+        Delete
+       </button>
+   
+   <script>
+    const blogDelete = document.getElementsByClassName('del')
+    //As it returns a collection of HTML elelments so have to apply a foreach to add an event listner.
+    
+    Array.from(blogDelete).forEach((ele) =>{
+        ele.addEventListener('click', async(e) =>{
+        try{
+            const endpoint = `/blogs/${e.target.dataset.doc}`;
+        const result = await fetch(endpoint, {method:'DELETE'});
+        const data = await result.json()
+        console.log(data , "hii");
+        window.location.href = data.redirect
+        
+        }
+        catch(err){
+            console.log(err);
+        }
+       
+        
+        
+    })
+        
+    })
+  
+   </script>
+  
+    
+</body>
+</html>
